@@ -3,6 +3,8 @@ extends Control
 var bober_normal = preload("res://Graphics/Bober/bober_cute.png")
 var bober_germam = preload("res://Graphics/Bober/CowBoy.png")
 
+var effect_star = preload("res://Src/Trophies/Star.tscn")
+
 @onready var main = get_parent()
 @onready var bober = get_node("../Bober")
 @onready var Counter = $Counter
@@ -14,6 +16,7 @@ var tween_color: Tween
 var tween_color_bober: Tween
 var tween_color_top_center_text: Tween
 var tween_counter_text: Tween
+var tween_background_forest: Tween
 
 func _ready():
 	step()
@@ -60,6 +63,7 @@ func step():
 		11:
 			tween_counter_color_change(Color(0.3,0.3,0.3,1))
 			$TopCenterText.visible = true
+			$CenterText.visible = false
 		12:
 			pass
 		13:
@@ -105,16 +109,17 @@ func step():
 			pass
 		32:
 			TopCenterText.text = "He likes you"
+			star()
 		33:
-			bober.get_node("TextureRect").texture = bober_germam
+			pass
 		34:
 			pass
 		35:
-			bober.get_node("TextureRect").texture = bober_normal
+			bober.get_node("TextureRect").texture = bober_germam
 		36:
 			pass
 		37:
-			pass
+			bober.get_node("TextureRect").texture = bober_normal
 		38:
 			pass
 		39:
@@ -141,14 +146,19 @@ func step():
 			$Flowers/flower7.visible = true
 		48:
 			$Flowers/flower8.visible = true
+			$Flowers/flower9.visible = true
 			AudioManager.mute_layer("level1", ["kick"], false, 0.5)
 			AudioManager.mute_layer("level1", ["melody"], false, 0.5)
 		49:
-			pass
+			$Flowers/flower10.visible = true
+			$Flowers/flower11.visible = true
+			tween_background_forest_change(Color(1,1,1,0.3))
 		50:
-			pass
+			tween_background_forest_change(Color(1,1,1,0.5))
 		51:
-			pass
+			tween_background_forest_change(Color(1,1,1,0.8))
+			$Effects/Cloud.emitting = true
+			$Effects/Cloud2.emitting = true
 		52:
 			pass
 		53:
@@ -253,6 +263,7 @@ func step():
 func counter_actualization():
 	$Counter.text = str(main.counter)
 	
+#TWEENS-------------------------------------
 func tween_color_change(color, time = 0.2):
 	if tween_color:
 			tween_color.kill()
@@ -267,15 +278,29 @@ func tween_color_bober_change(color, time = 0.2):
 
 func tween_counter_color_change(color,time = 0.2):
 	if tween_counter_text:
-			tween_counter_text.kill()
+		tween_counter_text.kill()
 	tween_counter_text = create_tween()
 	tween_counter_text.tween_property($Counter, "modulate", Color(color), time).set_trans(Tween.TRANS_SINE)#Tween.TRANS_SINE
 
 func tween_color_top_center(color, time = 0.2):
 	if tween_color_top_center_text:
-			tween_color_top_center_text.kill()
+		tween_color_top_center_text.kill()
 	tween_color_top_center_text = create_tween()
 	tween_color_top_center_text.tween_property($TopCenterText, "modulate", Color(color), time).set_trans(Tween.TRANS_SINE)#Tween.TRANS_SINE
+
+func tween_background_forest_change(color, time = 0.2):
+	if tween_background_forest:
+		tween_background_forest.kill()
+	tween_background_forest = create_tween()
+	tween_background_forest.tween_property($Ground, "modulate", Color(color), time).set_trans(Tween.TRANS_SINE)#Tween.TRANS_SINE
+
+func star():
+	var new_star = effect_star.instantiate()
+	$Effects.add_child(new_star)
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	new_star.global_position = Vector2(randi_range(0,1920),1080)
+	new_star.emitting = true
 
 func reset():
 	bober.modulate = Color(1,1,1,0)

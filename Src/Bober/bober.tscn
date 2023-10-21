@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://k66voump8vlg"]
+
+[ext_resource type="Script" path="res://Src/Bober/bober.gd" id="1_gb0sj"]
+[ext_resource type="Texture2D" uid="uid://co6fl8qj0iody" path="res://Graphics/Bober/bober_cute.png" id="2_8mf3u"]
+
+[node name="Bober" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gb0sj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.263
+anchor_top = 0.11
+anchor_right = 0.709
+anchor_bottom = 0.769
+offset_left = -52.976
+offset_top = 8.71999
+offset_right = -4.76807
+offset_bottom = 63.688
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8mf3u")

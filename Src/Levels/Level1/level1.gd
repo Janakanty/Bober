@@ -90,3 +90,4 @@ func tween_color_bober_change(color):
 
 func reset():
 	bober.modulate = Color(1,1,1,0)
+#BLO

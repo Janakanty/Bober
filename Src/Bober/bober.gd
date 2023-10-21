@@ -7,12 +7,13 @@ var in_the_middle_of_the_jump: bool = false
 
 var tween: Tween
 
-	
+
 func _input(event):
 	jump()
 
 func jump():
 	if Input.is_action_just_pressed("Space") and in_the_middle_of_the_jump == false:
+		rand_jump_high()
 		in_the_middle_of_the_jump = true
 		if tween:
 			tween.kill()
@@ -34,3 +35,8 @@ func end_jump():
 func actualization_progress():
 	get_parent().counter += 1
 	get_parent().step_in_actual_level()
+
+func rand_jump_high():
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	jump_high = rng.randi_range(-40,-80)

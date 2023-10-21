@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyfyqatujs3ru"]
+[gd_scene load_steps=6 format=3 uid="uid://dyfyqatujs3ru"]
 
 [ext_resource type="Script" path="res://Src/Levels/Level1/level1.gd" id="1_nn46f"]
 [ext_resource type="FontFile" uid="uid://b60px2ei7ri4q" path="res://Fonts/static/PixelifySans-Medium.ttf" id="2_pfd31"]
+[ext_resource type="FontFile" uid="uid://ddyomuokba3cl" path="res://Fonts/static/PixelifySans-Regular.ttf" id="3_nsnua"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8460e"]
 font = ExtResource("2_pfd31")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_ypocg"]
+font = ExtResource("3_nsnua")
 font_size = 100
 
 [node name="Level1" type="Control"]
@@ -34,5 +39,21 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "I need some space..."
 label_settings = SubResource("LabelSettings_8460e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Counter" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.049
+anchor_right = 0.164
+anchor_bottom = 0.239
+offset_left = 0.0480003
+offset_top = 0.247999
+offset_right = 0.071991
+offset_bottom = 0.127991
+text = "1"
+label_settings = SubResource("LabelSettings_ypocg")
 horizontal_alignment = 1
 vertical_alignment = 1

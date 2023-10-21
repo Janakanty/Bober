@@ -128,15 +128,19 @@ func step():
 		43:
 			AudioManager.play_music("level1")
 			TopCenterText.text = "Beaver goes to his dream job"
+			$Flowers/flower1.visible = true
 		44:
-			pass
+			$Flowers/flower2.visible = true
 		45:
-			pass
+			$Flowers/flower3.visible = true
+			$Flowers/flower4.visible = true
 		46:
-			pass
+			$Flowers/flower5.visible = true
 		47:
-			pass
+			$Flowers/flower6.visible = true
+			$Flowers/flower7.visible = true
 		48:
+			$Flowers/flower8.visible = true
 			AudioManager.mute_layer("level1", ["kick"], false, 0.5)
 			AudioManager.mute_layer("level1", ["melody"], false, 0.5)
 		49:

@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyfyqatujs3ru"]
+[gd_scene load_steps=10 format=3 uid="uid://dyfyqatujs3ru"]
 
 [ext_resource type="Script" path="res://Src/Levels/Level1/level1.gd" id="1_nn46f"]
 [ext_resource type="FontFile" uid="uid://b60px2ei7ri4q" path="res://Fonts/static/PixelifySans-Medium.ttf" id="2_pfd31"]
 [ext_resource type="FontFile" uid="uid://ddyomuokba3cl" path="res://Fonts/static/PixelifySans-Regular.ttf" id="3_nsnua"]
+[ext_resource type="Texture2D" uid="uid://4pei17hbt86b" path="res://Graphics/Level1/Flower_3.png" id="4_bll5n"]
+[ext_resource type="Texture2D" uid="uid://byx723uglmmd1" path="res://Graphics/Level1/Flower_2.png" id="5_hyhi0"]
+[ext_resource type="Texture2D" uid="uid://eapn7lmmj73w" path="res://Graphics/Level1/Flower_1.png" id="6_577l2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ypocg"]
 font = ExtResource("3_nsnua")
@@ -76,3 +79,97 @@ text = "Beaver from the River"
 label_settings = SubResource("LabelSettings_cri2g")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Flowers" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="flower1" type="TextureRect" parent="Flowers"]
+visible = false
+layout_mode = 0
+offset_left = 1540.0
+offset_top = 781.0
+offset_right = 1620.0
+offset_bottom = 861.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_bll5n")
+
+[node name="flower8" type="TextureRect" parent="Flowers"]
+visible = false
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 573.0
+offset_right = 1125.0
+offset_bottom = 653.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_bll5n")
+
+[node name="flower2" type="TextureRect" parent="Flowers"]
+visible = false
+layout_mode = 0
+offset_left = 140.0
+offset_top = 760.0
+offset_right = 220.0
+offset_bottom = 840.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_bll5n")
+
+[node name="flower3" type="TextureRect" parent="Flowers"]
+visible = false
+layout_mode = 0
+offset_left = 449.0
+offset_top = 521.0
+offset_right = 529.0
+offset_bottom = 601.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_hyhi0")
+
+[node name="flower4" type="TextureRect" parent="Flowers"]
+visible = false
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 578.0
+offset_right = 1380.0
+offset_bottom = 658.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_577l2")
+
+[node name="flower7" type="TextureRect" parent="Flowers"]
+visible = false
+layout_mode = 0
+offset_left = 477.0
+offset_top = 771.0
+offset_right = 557.0
+offset_bottom = 851.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_577l2")
+
+[node name="flower6" type="TextureRect" parent="Flowers"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 792.0
+offset_right = 1091.0
+offset_bottom = 872.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_hyhi0")
+
+[node name="flower5" type="TextureRect" parent="Flowers"]
+visible = false
+layout_mode = 0
+offset_left = 166.0
+offset_top = 541.0
+offset_right = 246.0
+offset_bottom = 621.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_577l2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1289.0
+offset_bottom = 1074.0

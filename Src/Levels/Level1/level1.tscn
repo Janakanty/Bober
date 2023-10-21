@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyfyqatujs3ru"]
+[gd_scene load_steps=7 format=3 uid="uid://dyfyqatujs3ru"]
 
 [ext_resource type="Script" path="res://Src/Levels/Level1/level1.gd" id="1_nn46f"]
 [ext_resource type="FontFile" uid="uid://b60px2ei7ri4q" path="res://Fonts/static/PixelifySans-Medium.ttf" id="2_pfd31"]
@@ -11,6 +11,11 @@ font_size = 100
 [sub_resource type="LabelSettings" id="LabelSettings_8460e"]
 font = ExtResource("2_pfd31")
 font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_cri2g"]
+font = ExtResource("3_nsnua")
+font_size = 65
+font_color = Color(0, 0, 0, 1)
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -46,7 +51,7 @@ label_settings = SubResource("LabelSettings_ypocg")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="CenterText" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,5 +60,19 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "I need some space..."
 label_settings = SubResource("LabelSettings_8460e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopCenterText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.073
+anchor_right = 1.0
+anchor_bottom = 0.273
+offset_top = -44.304
+offset_right = -3.0
+offset_bottom = 14.096
+text = "Beaver from the River"
+label_settings = SubResource("LabelSettings_cri2g")
 horizontal_alignment = 1
 vertical_alignment = 1

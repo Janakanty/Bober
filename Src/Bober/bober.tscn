@@ -14,15 +14,14 @@ script = ExtResource("1_gb0sj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.263
-anchor_top = 0.11
-anchor_right = 0.709
-anchor_bottom = 0.769
-offset_left = -52.976
-offset_top = 8.71999
-offset_right = -4.76807
-offset_bottom = 63.688
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 485.0
+offset_top = 159.0
+offset_right = -504.0
+offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_8mf3u")
+stretch_mode = 4

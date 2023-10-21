@@ -1,7 +1,9 @@
 extends Control
 
 var jump_high = -50
-var ground_position = 80
+var jump_min = -40
+var jump_max = -80
+var ground_position = 130
 var in_the_middle_of_the_jump: bool = false
 
 
@@ -18,7 +20,7 @@ func jump():
 		if tween:
 			tween.kill()
 		tween = create_tween()
-		tween.tween_property($TextureRect, "position", Vector2(250,jump_high), 0.2).set_trans(Tween.TRANS_CIRC)#
+		tween.tween_property($TextureRect, "position", Vector2(430,jump_high), 0.2).set_trans(Tween.TRANS_CIRC)#
 		tween.finished.connect(Callable(self,"jump_back"))
 
 func jump_back():
@@ -26,7 +28,7 @@ func jump_back():
 	if tween:
 			tween.kill()
 	tween = create_tween()
-	tween.tween_property($TextureRect, "position", Vector2(250,ground_position), 0.1).set_trans(Tween.TRANS_BACK)#Tween.TRANS_SINE
+	tween.tween_property($TextureRect, "position", Vector2(430,ground_position), 0.1).set_trans(Tween.TRANS_BACK)#Tween.TRANS_SINE
 	tween.finished.connect(Callable(self,"end_jump"))
 	
 func end_jump():
@@ -39,4 +41,4 @@ func actualization_progress():
 func rand_jump_high():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	jump_high = rng.randi_range(-40,-80)
+	jump_high = rng.randi_range(jump_min,jump_max)

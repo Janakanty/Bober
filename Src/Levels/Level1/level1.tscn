@@ -1,14 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyfyqatujs3ru"]
+[gd_scene load_steps=19 format=3 uid="uid://dyfyqatujs3ru"]
 
 [ext_resource type="Script" path="res://Src/Levels/Level1/level1.gd" id="1_nn46f"]
 [ext_resource type="Texture2D" uid="uid://qi7fipm0bo63" path="res://Graphics/Level1/Background.png" id="2_ocds3"]
 [ext_resource type="FontFile" uid="uid://b60px2ei7ri4q" path="res://Fonts/static/PixelifySans-Medium.ttf" id="2_pfd31"]
 [ext_resource type="FontFile" uid="uid://ddyomuokba3cl" path="res://Fonts/static/PixelifySans-Regular.ttf" id="3_nsnua"]
 [ext_resource type="Texture2D" uid="uid://4pei17hbt86b" path="res://Graphics/Level1/Flower_3.png" id="4_bll5n"]
+[ext_resource type="Texture2D" uid="uid://br046ao7wyj4u" path="res://Graphics/Level1/chest.png" id="5_8yeub"]
 [ext_resource type="Texture2D" uid="uid://byx723uglmmd1" path="res://Graphics/Level1/Flower_2.png" id="5_hyhi0"]
+[ext_resource type="Texture2D" uid="uid://bofrivmbf3jyr" path="res://Graphics/Level1/shel1.png" id="5_y7tyu"]
 [ext_resource type="Texture2D" uid="uid://eapn7lmmj73w" path="res://Graphics/Level1/Flower_1.png" id="6_577l2"]
+[ext_resource type="Texture2D" uid="uid://df641x3v8jtdr" path="res://Graphics/Level1/Crab_1.png" id="6_iwcp2"]
+[ext_resource type="Texture2D" uid="uid://b6nqwrqepf4d8" path="res://Graphics/Level1/Ship.png" id="8_kkxwd"]
 [ext_resource type="PackedScene" uid="uid://m5gdmpkbsrj2" path="res://Src/Trophies/cloud.tscn" id="9_tpfao"]
 [ext_resource type="PackedScene" uid="uid://dfnoxi3ndmu3l" path="res://Src/Trophies/cloud2.tscn" id="10_dh2qn"]
+[ext_resource type="PackedScene" uid="uid://dbwivw1dqpawn" path="res://Src/Trophies/coin.tscn" id="10_djbdm"]
+[ext_resource type="AudioStream" uid="uid://cjxnp5hi0dofa" path="res://Audio/BGS/lid-of-chest-hitting_.mp3" id="15_5a5tj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ypocg"]
 font = ExtResource("3_nsnua")
@@ -92,6 +98,121 @@ text = "Beaver from the River"
 label_settings = SubResource("LabelSettings_cri2g")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Pirate" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="shel2" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 31.0
+offset_top = 788.0
+offset_right = 124.0
+offset_bottom = 891.0
+texture = ExtResource("5_y7tyu")
+
+[node name="shel3" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 1376.0
+offset_top = 1019.0
+offset_right = 1469.0
+offset_bottom = 1122.0
+texture = ExtResource("5_y7tyu")
+
+[node name="shel4" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 619.0
+offset_top = 1025.0
+offset_right = 712.0
+offset_bottom = 1128.0
+texture = ExtResource("5_y7tyu")
+
+[node name="shel5" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 1873.0
+offset_top = 808.0
+offset_right = 1966.0
+offset_bottom = 911.0
+texture = ExtResource("5_y7tyu")
+
+[node name="Chest" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 73.0
+offset_top = 650.0
+offset_right = 403.0
+offset_bottom = 914.0
+texture = ExtResource("5_8yeub")
+
+[node name="Chest2" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 1473.0
+offset_top = 845.0
+offset_right = 1803.0
+offset_bottom = 1109.0
+texture = ExtResource("5_8yeub")
+
+[node name="Chest3" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 1512.0
+offset_top = 524.0
+offset_right = 1842.0
+offset_bottom = 788.0
+texture = ExtResource("5_8yeub")
+
+[node name="Chest4" type="TextureRect" parent="Pirate"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 793.0
+offset_top = 796.0
+offset_right = 1123.0
+offset_bottom = 1060.0
+texture = ExtResource("5_8yeub")
+
+[node name="crab" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 219.0
+offset_top = 857.0
+offset_right = 362.0
+offset_bottom = 945.0
+texture = ExtResource("6_iwcp2")
+
+[node name="crab2" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 1497.0
+offset_top = 692.0
+offset_right = 1640.0
+offset_bottom = 780.0
+texture = ExtResource("6_iwcp2")
+
+[node name="shel" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 1221.0
+offset_top = 788.0
+offset_right = 1314.0
+offset_bottom = 891.0
+texture = ExtResource("5_y7tyu")
+
+[node name="ship" type="TextureRect" parent="Pirate"]
+visible = false
+layout_mode = 0
+offset_left = 240.0
+offset_top = 198.0
+offset_right = 385.0
+offset_bottom = 278.0
+scale = Vector2(2.04723, 2.04723)
+texture = ExtResource("8_kkxwd")
 
 [node name="Flowers" type="Control" parent="."]
 layout_mode = 1
@@ -221,6 +342,13 @@ offset_right = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Coin" parent="Effects" instance=ExtResource("10_djbdm")]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 252.0
+offset_right = 219.0
+offset_bottom = 332.0
+
 [node name="Cloud" parent="Effects" instance=ExtResource("9_tpfao")]
 position = Vector2(-77, 183)
 emitting = false
@@ -229,3 +357,6 @@ emitting = false
 position = Vector2(-10, -10)
 scale = Vector2(2.28056, 11.5253)
 emitting = false
+
+[node name="Chest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_5a5tj")

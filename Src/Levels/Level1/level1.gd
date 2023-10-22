@@ -2,8 +2,13 @@ extends Control
 
 var bober_normal = preload("res://Graphics/Bober/bober_cute.png")
 var bober_germam = preload("res://Graphics/Bober/CowBoy.png")
+var bober_pirat = preload("res://Graphics/Bober/Beaver_Pirate.png")
+
+var BG_normal = preload("res://Graphics/Level1/Background.png")
+var BG_beach = preload("res://Graphics/Level1/Background1.png")
 
 var effect_star = preload("res://Src/Trophies/Star.tscn")
+var effect_money = preload("res://Src/Trophies/Money.tscn")
 var effect_super_text = preload("res://Src/Trophies/super_text.tscn")
 
 @onready var main = get_parent()
@@ -83,7 +88,7 @@ func step():
 		19:
 			tween_color_top_center(Color(0,0,0,0), 2)
 		20:
-			pass
+			$Effects/Coin.start_coin()
 		21:
 			pass
 		22:
@@ -106,7 +111,7 @@ func step():
 		29:
 			pass
 		30:
-			pass
+			$Effects/Coin.start_coin()
 		31:
 			pass
 		32:
@@ -129,6 +134,7 @@ func step():
 			TopCenterText.text = ""
 		40:
 			AudioManager.stop_music(true, 3)
+			$Effects/Coin.start_coin()
 		41:
 			pass
 		42:
@@ -158,6 +164,7 @@ func step():
 			tween_background_forest_change(Color(1,1,1,0.3))
 		50:
 			tween_background_forest_change(Color(1,1,1,0.5))
+			$Effects/Coin.start_coin()
 		51:
 			tween_background_forest_change(Color(1,1,1,0.8))
 			$Effects/Cloud.emitting = true
@@ -181,15 +188,15 @@ func step():
 		57:
 			pass
 		58:
-			pass
+			super_text("EXTRA JUMP!")
 		59:
 			pass
 		60:
-			pass
+			$Effects/Coin.start_coin()
 		61:
 			TopCenterText.text = "To jump or not to jump?"
 		62:
-			pass
+			super_text("ITS POSSIBLE?!")
 		63:
 			pass
 		64:
@@ -201,11 +208,15 @@ func step():
 		67:
 			pass
 		68:
-			pass
+			TopCenterText.text = "JOKE?"
 		69:
 			pass
 		70:
-			pass
+			$Effects/Coin.start_coin()
+			star()
+			star()
+			star()
+			
 		71:
 			pass
 		72:
@@ -225,7 +236,7 @@ func step():
 		79:
 			pass
 		80:
-			pass
+			$Effects/Coin.start_coin()
 		81:
 			pass
 		82:
@@ -235,36 +246,170 @@ func step():
 		84:
 			pass
 		85:
-			pass
+			#pirate
+			$Ground.texture = BG_beach
+			AudioManager.stop_all()
+			AudioManager.play_music("fale")
+			bober.get_node("TextureRect").texture = bober_pirat
+			
 		86:
-			pass
+			$Pirate/shel.visible = true
+			$Pirate/shel2.visible = true
+			$Effects/Coin.start_coin()
 		87:
-			pass
+			$Pirate/shel3.visible = true
+			$Pirate/crab.visible = true
+			$Effects/Coin.start_coin()
+			$Pirate/ship.visible = true
 		88:
-			pass
+			$Effects/Coin.start_coin()
+			$Pirate/crab2.visible = true
 		89:
-			pass
+			$Effects/Coin.start_coin()
 		90:
-			pass
+			$Effects/Coin.start_coin()
+			$Pirate/Chest.visible = true
+			
+			
 		91:
-			pass
+			$Pirate/shel4.visible = true
+			$Pirate/Chest2.visible = true
+			$Effects/Coin.start_coin()
+			$Chest.play()
 		92:
-			pass
+			$Effects/Coin.start_coin()
+			$Pirate/Chest3.visible = true
+			$Chest.play()
 		93:
-			pass
+			$Effects/Coin.start_coin()
+			$Pirate/Chest4.visible = true
+
 		94:
-			pass
+			$Effects/Coin.start_coin()
+			money()
 		95:
-			pass
+			$Effects/Coin.start_coin()
 		96:
-			pass
+			$Effects/Coin.start_coin()
+			money()
 		97:
-			pass
+			$Effects/Coin.start_coin()
 		98:
-			pass
+			$Effects/Coin.start_coin()
+			money()
+			money()
+			money()
+			money()
 		99:
-			pass
+			$Pirate.visible = false
+			$Ground.texture = BG_normal
+			AudioManager.play_music("level1")
+			AudioManager.mute_layer("level1", ["kick"], false, 0.5)
+			AudioManager.mute_layer("level1", ["melody"], false, 0.5)
+			bober.get_node("TextureRect").texture = bober_normal
 		100:
+			$Effects/Coin.start_coin()
+		101:
+			pass
+		102:
+			pass
+		101:
+			pass
+		102:
+			pass
+		103:
+			pass
+		104:
+			pass
+		105:
+			pass
+		106:
+			pass
+		107:
+			pass
+		108:
+			pass
+		109:
+			pass
+		111:
+			pass
+		112:
+			pass
+		113:
+			pass
+		114:
+			pass
+		115:
+			pass
+		116:
+			pass
+		117:
+			pass
+		118:
+			pass
+		119:
+			pass
+		120:
+			pass
+		121:
+			pass
+		122:
+			pass
+		123:
+			pass
+		124:
+			pass
+		125:
+			pass
+		126:
+			pass
+		127:
+			pass
+		128:
+			pass
+		129:
+			pass
+		130:
+			pass
+		131:
+			pass
+		132:
+			pass
+		133:
+			pass
+		134:
+			pass
+		135:
+			pass
+		136:
+			pass
+		137:
+			pass
+		138:
+			pass
+		139:
+			pass
+		140:
+			pass
+		141:
+			pass
+		142:
+			pass
+		143:
+			pass
+		144:
+			pass
+		145:
+			pass
+		146:
+			pass
+		147:
+			pass
+		148:
+			pass
+		149:
+			pass
+		150:
 			pass
 	counter_actualization()
 		
@@ -303,6 +448,8 @@ func tween_background_forest_change(color, time = 0.2):
 	tween_background_forest = create_tween()
 	tween_background_forest.tween_property($Ground, "modulate", Color(color), time).set_trans(Tween.TRANS_SINE)#Tween.TRANS_SINE
 
+
+
 func star():
 	var new_star = effect_star.instantiate()
 	$Effects.add_child(new_star)
@@ -310,6 +457,14 @@ func star():
 	rng.randomize()
 	new_star.global_position = Vector2(randi_range(0,1920),1080)
 	new_star.emitting = true
+	
+func money():
+	var new_money = effect_money.instantiate()
+	$Effects.add_child(new_money)
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	new_money.global_position = Vector2(randi_range(0,1920),1080)
+	new_money.emitting = true
 
 func super_text(text):
 	var new_super_text = effect_super_text.instantiate()

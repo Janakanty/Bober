@@ -18,6 +18,7 @@ func _input(event):
 
 func jump():
 	if Input.is_action_just_pressed("Space") and in_the_middle_of_the_jump == false:
+		$AudioStreamPlayer.play()
 		rand_jump_high()
 		in_the_middle_of_the_jump = true
 		if tween:

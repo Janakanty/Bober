@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://wph76b6bwyv1"]
+
+[ext_resource type="FontFile" uid="uid://ddyomuokba3cl" path="res://Fonts/static/PixelifySans-Regular.ttf" id="1_a0mi6"]
+[ext_resource type="Script" path="res://Src/Trophies/super_text.gd" id="2_2nptx"]
+[ext_resource type="AudioStream" uid="uid://s80lpsqvbaow" path="res://Audio/BGS/bez_nazwy.wav" id="3_ykxnx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_om6uv"]
+font = ExtResource("1_a0mi6")
+font_size = 90
+font_color = Color(0.980392, 0.47451, 0.337255, 1)
+
+[node name="SuperText" type="Label"]
+z_index = 1
+offset_left = -443.0
+offset_top = 10.0
+offset_right = 425.0
+offset_bottom = 250.0
+pivot_offset = Vector2(442, 72)
+text = "Cool!"
+label_settings = SubResource("LabelSettings_om6uv")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_2nptx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ykxnx")

@@ -4,6 +4,7 @@ var bober_normal = preload("res://Graphics/Bober/bober_cute.png")
 var bober_germam = preload("res://Graphics/Bober/CowBoy.png")
 
 var effect_star = preload("res://Src/Trophies/Star.tscn")
+var effect_super_text = preload("res://Src/Trophies/super_text.tscn")
 
 @onready var main = get_parent()
 @onready var bober = get_node("../Bober")
@@ -30,6 +31,7 @@ func step():
 			tween_color_change(Color(1,1,1,0.1))
 			tween_color_bober_change(Color(1,1,1,0.1))
 			$Counter.visible = true
+
 		2:
 			tween_color_change(Color(1,1,1,0.2))
 			tween_color_bober_change(Color(1,1,1,0.2))
@@ -109,9 +111,10 @@ func step():
 			pass
 		32:
 			TopCenterText.text = "He likes you"
+			super_text("Awesome!")
 			star()
 		33:
-			pass
+			star()
 		34:
 			pass
 		35:
@@ -159,14 +162,20 @@ func step():
 			tween_background_forest_change(Color(1,1,1,0.8))
 			$Effects/Cloud.emitting = true
 			$Effects/Cloud2.emitting = true
+			star()
+			star()
+			star()
+			star()
+			star()
+			star()
 		52:
-			pass
+			super_text("You are awesome!")
 		53:
 			pass
 		54:
 			pass
 		55:
-			pass
+			TopCenterText.text = ""
 		56:
 			pass
 		57:
@@ -178,7 +187,7 @@ func step():
 		60:
 			pass
 		61:
-			pass
+			TopCenterText.text = "To jump or not to jump?"
 		62:
 			pass
 		63:
@@ -301,6 +310,11 @@ func star():
 	rng.randomize()
 	new_star.global_position = Vector2(randi_range(0,1920),1080)
 	new_star.emitting = true
+
+func super_text(text):
+	var new_super_text = effect_super_text.instantiate()
+	$Effects.add_child(new_super_text)
+	new_super_text.super_text(text)
 
 func reset():
 	bober.modulate = Color(1,1,1,0)

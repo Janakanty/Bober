@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dyfyqatujs3ru"]
+[gd_scene load_steps=13 format=3 uid="uid://dyfyqatujs3ru"]
 
 [ext_resource type="Script" path="res://Src/Levels/Level1/level1.gd" id="1_nn46f"]
 [ext_resource type="Texture2D" uid="uid://qi7fipm0bo63" path="res://Graphics/Level1/Background.png" id="2_ocds3"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://4pei17hbt86b" path="res://Graphics/Level1/Flower_3.png" id="4_bll5n"]
 [ext_resource type="Texture2D" uid="uid://byx723uglmmd1" path="res://Graphics/Level1/Flower_2.png" id="5_hyhi0"]
 [ext_resource type="Texture2D" uid="uid://eapn7lmmj73w" path="res://Graphics/Level1/Flower_1.png" id="6_577l2"]
-[ext_resource type="PackedScene" uid="uid://cu6dr1qfoenv3" path="res://Src/Trophies/Star.tscn" id="7_ehkpb"]
 [ext_resource type="PackedScene" uid="uid://m5gdmpkbsrj2" path="res://Src/Trophies/cloud.tscn" id="9_tpfao"]
 [ext_resource type="PackedScene" uid="uid://dfnoxi3ndmu3l" path="res://Src/Trophies/cloud2.tscn" id="10_dh2qn"]
 
@@ -221,9 +220,6 @@ anchor_bottom = 1.0
 offset_right = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Star" parent="Effects" instance=ExtResource("7_ehkpb")]
-position = Vector2(4, 1111)
 
 [node name="Cloud" parent="Effects" instance=ExtResource("9_tpfao")]
 position = Vector2(-77, 183)

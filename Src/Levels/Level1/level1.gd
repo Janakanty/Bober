@@ -1,8 +1,10 @@
 extends Control
 
+
 var bober_normal = preload("res://Graphics/Bober/bober_cute.png")
 var bober_germam = preload("res://Graphics/Bober/CowBoy.png")
 var bober_pirat = preload("res://Graphics/Bober/Beaver_Pirate.png")
+var bober_dead = preload("res://Graphics/Bober/Dead_Beaver.png")
 
 var BG_normal = preload("res://Graphics/Level1/Background.png")
 var BG_beach = preload("res://Graphics/Level1/Background1.png")
@@ -10,6 +12,7 @@ var BG_beach = preload("res://Graphics/Level1/Background1.png")
 var effect_star = preload("res://Src/Trophies/Star.tscn")
 var effect_money = preload("res://Src/Trophies/Money.tscn")
 var effect_super_text = preload("res://Src/Trophies/super_text.tscn")
+
 
 @onready var main = get_parent()
 @onready var bober = get_node("../Bober")
@@ -35,7 +38,7 @@ func step():
 		1:
 			tween_color_change(Color(1,1,1,0.1))
 			tween_color_bober_change(Color(1,1,1,0.1))
-			$Counter.visible = true
+			$Counter.visible = true  
 
 		2:
 			tween_color_change(Color(1,1,1,0.2))
@@ -68,6 +71,7 @@ func step():
 			tween_color_bober_change(Color(1,1,1,1))
 
 		11:
+			TopCenterText.label_settings.font_size = 100
 			tween_counter_color_change(Color(0.3,0.3,0.3,1))
 			$TopCenterText.visible = true
 			$CenterText.visible = false
@@ -94,6 +98,7 @@ func step():
 		22:
 			pass
 		23:
+			TopCenterText.label_settings.font_size = 65
 			tween_color_top_center_text.kill()
 			TopCenterText.text = "Meet the beaver"
 			TopCenterText.modulate = Color(0.3,0.3,0.3,1)
@@ -203,25 +208,27 @@ func step():
 		64:
 			pass
 		65:
-			pass
+			TopCenterText.text = ""
 		66:
-			pass
+			super_text("Fast and furious")
 		67:
 			pass
 		68:
-			TopCenterText.text = "JOKE?"
-		69:
 			pass
+		69:
+			TopCenterText.text = "Noice"
 		70:
 			$Effects/Coin.start_coin()
+			TopCenterText.text = ""
 			star()
 			star()
 			star()
+			super_text("INSANE!")
 			
 		71:
-			pass
+			super_text("71? WOW!!!")
 		72:
-			pass
+			super_text("UNSTOPPABLE")
 		73:
 			pass
 		74:
@@ -238,6 +245,7 @@ func step():
 			pass
 		80:
 			$Effects/Coin.start_coin()
+			TopCenterText.text = "Are you there?"
 		81:
 			pass
 		82:
@@ -248,72 +256,89 @@ func step():
 			pass
 		85:
 			#pirate
+			$Flowers.visible = false
 			$Ground.texture = BG_beach
 			AudioManager.stop_all()
 			AudioManager.play_music("fale")
 			bober.get_node("TextureRect").texture = bober_pirat
+			TopCenterText.text = "ARR!"
 			
 		86:
 			$Pirate/shel.visible = true
 			$Pirate/shel2.visible = true
 			$Effects/Coin.start_coin()
+			TopCenterText.text = "Want some crack?"
 		87:
 			$Pirate/shel3.visible = true
 			$Pirate/crab.visible = true
 			$Effects/Coin.start_coin()
 			$Pirate/ship.visible = true
+			TopCenterText.text = "You are a pirate, bearver"
 		88:
 			$Effects/Coin.start_coin()
 			$Pirate/crab2.visible = true
+			TopCenterText.text = "Want some crack?"
 		89:
 			$Effects/Coin.start_coin()
+			TopCenterText.text = "Where is the rum gone?"
 		90:
 			$Effects/Coin.start_coin()
 			$Chest.play()
 			$Pirate/Chest.visible = true
+			TopCenterText.text = "Look at me, im a Capitain now"
 		91:
 			$Pirate/shel4.visible = true
 			$Pirate/Chest2.visible = true
 			$Effects/Coin.start_coin()
 			$Chest.play()
+			TopCenterText.text = "You look at my hook?"
+			
+			
 		92:
 			$Effects/Coin.start_coin()
 			$Pirate/Chest3.visible = true
 			$Chest.play()
+			TopCenterText.text = "My Precious..."
 		93:
 			$Effects/Coin.start_coin()
 			$Pirate/Chest4.visible = true
 			$Chest.play()
+			TopCenterText.text = "Boarding!!!"
 
 		94:
 			$Effects/Coin.start_coin()
 			money()
+			TopCenterText.text = "Adventure!"
 		95:
 			$Effects/Coin.start_coin()
+			TopCenterText.text = "What's a pirate's favorite type of music? A little bit of ARRR & B!"
 		96:
 			$Effects/Coin.start_coin()
 			money()
+			TopCenterText.text = "What will we do with a drunken sailor?"
 		97:
 			$Effects/Coin.start_coin()
+			TopCenterText.text = "What will we do with a drunken sailor?"
 		98:
 			$Effects/Coin.start_coin()
+			TopCenterText.text = "Early in the morning!"
 			money()
 			money()
 			money()
 			money()
 		99:
+			$Flowers.visible = true
 			$Pirate.visible = false
 			$Ground.texture = BG_normal
 			AudioManager.play_music("level1")
+			TopCenterText.text = ""
 			AudioManager.mute_layer("level1", ["kick"], false, 0.5)
 			AudioManager.mute_layer("level1", ["melody"], false, 0.5)
+			AudioManager.mute_layer("level1", ["low"], false, 0.5)
+			
 			bober.get_node("TextureRect").texture = bober_normal
 		100:
 			$Effects/Coin.start_coin()
-		101:
-			pass
-		102:
-			pass
 		101:
 			pass
 		102:
@@ -325,21 +350,29 @@ func step():
 		105:
 			pass
 		106:
-			pass
+			TopCenterText.text = "GAS GAS GAS!!!!"
+			super_text("GAS GAS GAS!")
+			bober.speed_jump_top = 0.1
+			bober.speed_jump_down = 0.05
 		107:
 			pass
 		108:
-			pass
+			TopCenterText.label_settings.font_size = 100
+			TopCenterText.text = "FASTER!"
+			TopCenterText.modulate = Color(1,0,0,0.8)
 		109:
-			pass
+			TopCenterText.text = ""
+		110:
+			TopCenterText.text = "FASTER!"
+			$Effects/Coin.start_coin()
 		111:
-			pass
+			TopCenterText.text = ""
 		112:
-			pass
+			TopCenterText.text = "FASTER!"
 		113:
-			pass
+			TopCenterText.text = ""
 		114:
-			pass
+			super_text("FASTER!")
 		115:
 			pass
 		116:
@@ -347,55 +380,62 @@ func step():
 		117:
 			pass
 		118:
-			pass
+			TopCenterText.text = "You almost there"
 		119:
 			pass
 		120:
-			pass
+			$Effects/Coin.start_coin()
 		121:
 			pass
 		122:
 			pass
 		123:
-			pass
+			TopCenterText.text = "SO CLOSE!"
+			money()
+			star()
 		124:
 			pass
 		125:
 			pass
 		126:
-			pass
+			bober.speed_jump_top = 0.05
+			bober.speed_jump_down = 0.01
 		127:
 			pass
 		128:
 			pass
 		129:
-			pass
+			TopCenterText.text = "Brace yourself!"
 		130:
-			pass
+			TopCenterText.modulate = Color(1,0,0,1)
+			$Effects/Coin.start_coin()
+
 		131:
-			pass
+			TopCenterText.modulate = Color(1,1,1,1)
 		132:
-			pass
+			TopCenterText.modulate = Color(1,0,0,1)
 		133:
-			pass
+			TopCenterText.modulate = Color(1,1,1,1)
+			TopCenterText.text = "Why so slow?"
+			super_text("FASTER")
 		134:
-			pass
+			TopCenterText.modulate = Color(1,0,0,1)
 		135:
-			pass
+			TopCenterText.modulate = Color(1,1,1,1)
 		136:
-			pass
+			TopCenterText.modulate = Color(1,0,0,1)
 		137:
-			pass
+			super_text("FASTER")
 		138:
 			pass
 		139:
 			pass
 		140:
-			pass
+			$Effects/Coin.start_coin()
 		141:
 			pass
 		142:
-			pass
+			super_text("FASTER")
 		143:
 			pass
 		144:
@@ -412,6 +452,54 @@ func step():
 			pass
 		150:
 			pass
+		151:
+			pass
+		152:
+			pass
+		153:
+			pass
+		154:
+			pass
+		155:
+			pass
+		156:
+			pass
+		157:
+			pass
+		158:
+			pass
+		159:
+			pass
+		160:
+			pass
+		161:
+			pass
+		162:
+			pass
+		163:
+			pass
+		164:
+			pass
+		165:
+			pass
+		166:
+			pass
+		167:
+			pass
+		168:
+			pass
+		169:
+			pass
+		170:
+			pass
+		171:
+			bober.end = true
+			bober.get_node("TextureRect").texture = bober_dead
+			AudioManager.play_music("start_level1", 2)
+			get_parent().end_level1()
+			
+			pass
+
 	counter_actualization()
 		
 	

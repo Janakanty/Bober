@@ -91,13 +91,15 @@ anchors_preset = -1
 anchor_top = 0.073
 anchor_right = 1.0
 anchor_bottom = 0.273
-offset_top = -44.304
-offset_right = -3.0
-offset_bottom = 14.096
+offset_left = 225.0
+offset_top = -43.84
+offset_right = -203.0
+offset_bottom = 14.16
 text = "Beaver from the River"
 label_settings = SubResource("LabelSettings_cri2g")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Pirate" type="Control" parent="."]
 anchors_preset = 0
@@ -344,6 +346,7 @@ grow_vertical = 2
 
 [node name="Coin" parent="Effects" instance=ExtResource("10_djbdm")]
 visible = false
+z_index = 1
 layout_mode = 0
 offset_left = 139.0
 offset_top = 252.0

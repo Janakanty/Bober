@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8i6m8ngn2two"]
+[gd_scene load_steps=7 format=3 uid="uid://b8i6m8ngn2two"]
 
 [ext_resource type="Script" path="res://addons/AdaptiSound/Nodes/ParallelTrack/ParallelTrack.gd" id="1_q266a"]
 [ext_resource type="Script" path="res://addons/AdaptiSound/Nodes/ParallelTrack/ParallelLayer.gd" id="2_j6mbb"]
 [ext_resource type="AudioStream" uid="uid://l4gx1inw8bi0" path="res://Audio/BGM/level1/melody.wav" id="3_c4iv1"]
 [ext_resource type="AudioStream" uid="uid://c1skbyi3i8om4" path="res://Audio/BGM/level1/kick1.wav" id="4_rryhj"]
 [ext_resource type="AudioStream" uid="uid://cl4533ypcixt4" path="res://Audio/BGM/level1/snare1.wav" id="5_e8358"]
+[ext_resource type="AudioStream" uid="uid://dmsllijp8or2r" path="res://Audio/BGM/level1/low.wav" id="6_6107x"]
 
 [node name="Level1" type="Node"]
 script = ExtResource("1_q266a")
@@ -22,3 +23,8 @@ layer_on = false
 [node name="snare" type="Node" parent="."]
 script = ExtResource("2_j6mbb")
 audio_streams = Array[AudioStream]([ExtResource("5_e8358")])
+
+[node name="low" type="Node" parent="."]
+script = ExtResource("2_j6mbb")
+audio_streams = Array[AudioStream]([ExtResource("6_6107x")])
+layer_on = false

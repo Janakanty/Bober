@@ -9,6 +9,7 @@ var in_the_middle_of_the_jump: bool = false
 var speed_jump_top = 0.3#0.2
 var speed_jump_down = 0.1#0.1
 
+var end = false
 
 var tween: Tween
 
@@ -17,7 +18,7 @@ func _input(event):
 	jump()
 
 func jump():
-	if Input.is_action_just_pressed("Space") and in_the_middle_of_the_jump == false:
+	if Input.is_action_just_pressed("Space") and in_the_middle_of_the_jump == false and end == false:
 		$AudioStreamPlayer.play()
 		rand_jump_high()
 		in_the_middle_of_the_jump = true

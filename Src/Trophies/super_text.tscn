@@ -8,6 +8,8 @@
 font = ExtResource("1_a0mi6")
 font_size = 90
 font_color = Color(0.980392, 0.47451, 0.337255, 1)
+outline_size = 17
+outline_color = Color(0, 1, 0.635294, 1)
 
 [node name="SuperText" type="Label"]
 z_index = 1

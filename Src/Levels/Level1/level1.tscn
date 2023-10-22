@@ -343,6 +343,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Coin" parent="Effects" instance=ExtResource("10_djbdm")]
+visible = false
 layout_mode = 0
 offset_left = 139.0
 offset_top = 252.0

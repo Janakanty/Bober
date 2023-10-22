@@ -6,8 +6,8 @@ var jump_max = -40
 var ground_position = 230
 var in_the_middle_of_the_jump: bool = false
 
-var speed_jump_top = 0.1#0.2
-var speed_jump_down = 0.05#0.1
+var speed_jump_top = 0.3#0.2
+var speed_jump_down = 0.1#0.1
 
 
 var tween: Tween

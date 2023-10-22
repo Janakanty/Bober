@@ -112,6 +112,7 @@ func step():
 			pass
 		30:
 			$Effects/Coin.start_coin()
+			bober.speed_jump_top = 0.2
 		31:
 			pass
 		32:
@@ -268,9 +269,8 @@ func step():
 			$Effects/Coin.start_coin()
 		90:
 			$Effects/Coin.start_coin()
+			$Chest.play()
 			$Pirate/Chest.visible = true
-			
-			
 		91:
 			$Pirate/shel4.visible = true
 			$Pirate/Chest2.visible = true
@@ -283,6 +283,7 @@ func step():
 		93:
 			$Effects/Coin.start_coin()
 			$Pirate/Chest4.visible = true
+			$Chest.play()
 
 		94:
 			$Effects/Coin.start_coin()
